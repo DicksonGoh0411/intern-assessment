@@ -2,7 +2,13 @@ import { prisma } from '@/app/lib/db'
 import React from 'react'
 import Link from 'next/link'
 
-const page = async ({ params }: { params: { id: string } }) => {
+interface PageProps {
+    params: {
+        id: string
+    }
+}
+
+const Page = async ({ params }: PageProps) => {
 
     const post = await prisma.post.findFirst({
         where: {
@@ -44,4 +50,4 @@ const page = async ({ params }: { params: { id: string } }) => {
     )
 }
 
-export default page
+export default Page
