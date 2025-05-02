@@ -1,15 +1,27 @@
 'use client'
 
 import React, { useState } from 'react'
-
+import { useRouter } from 'next/navigation'
 const CreateForm = () => {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
+    const router = useRouter()
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        // Handle form submission here
-        console.log({ title, content })
+        try {
+            const response = await fetch('/api/posts', {
+                method: 'POST',
+                body: JSON.stringify({ title, content })
+            })
+
+            if (response.status === 200) {
+                const data = await response.json();
+                router.push(`/blogs/${data.newPost.id}`);
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     return (
@@ -38,7 +50,6 @@ const CreateForm = () => {
                         id="content"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        rows={5}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Write your blog post content here"
                         required
@@ -47,7 +58,7 @@ const CreateForm = () => {
 
                 <button
                     type="submit"
-                    className="w-full border-2 border-white bg-black text-white py-2 px-4 rounded-md transition-all duration-200 hover:-translate-y-1 hover:bg-gray-500"
+                    className="w-full bg-black text-white border-2 border-white py-2 px-4 rounded-md hover:bg-gray-500 transition-all duration-200"
                 >
                     Create Post
                 </button>
