@@ -14,7 +14,7 @@ const Card = async () => {
     return (
         <>
             {posts.map((post) => (
-                <div key={post.id} className="max-w-sm rounded-lg border-5 border-white bg-black p-6 hover:-translate-y-1 transition-all duration-300">
+                <div key={post.id} className="max-w-sm rounded-lg border-4 border-white bg-black p-6 hover:-translate-y-1 transition-all duration-300">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
                         {post.title}
                     </h5>
