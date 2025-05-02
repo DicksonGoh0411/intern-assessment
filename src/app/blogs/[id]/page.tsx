@@ -35,7 +35,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                         day: "numeric",
                     })}
                 </div>
-                <p className="text-gray-500">{post.User?.name}</p>
+                <p className="text-gray-500">Written by: {post.User?.name}</p>
                 <div className="text-white leading-7 mt-5 break-words">
                     {post.content}
                 </div>

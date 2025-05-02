@@ -7,7 +7,7 @@ const page = async () => {
 
     return (
         <>
-            <div className="w-screen mx-auto">
+            <div>
                 <h1 className='text-3xl font-bold mb-10'>Blogs page</h1>
                 {user?.name ? (
                     <div className="flex">
@@ -19,7 +19,7 @@ const page = async () => {
                     </div>
                 )}
 
-                <div className="container mx-auto grid items-center justify-center md:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-4 mt-10 px-4">
+                <div className="max-w-6xl mx-auto grid items-center justify-center md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-4">
                     <Card />
                 </div>
             </div>
