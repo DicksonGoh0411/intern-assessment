@@ -17,7 +17,8 @@ const CreateForm = () => {
 
             if (response.status === 200) {
                 const data = await response.json();
-                router.push(`/blogs/${data.newPost.id}`);
+                router.push('/blogs');
+                router.refresh();
             }
         } catch (error) {
             console.error(error)
