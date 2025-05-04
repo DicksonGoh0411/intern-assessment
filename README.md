@@ -23,7 +23,7 @@ next/font to optimize and load fonts.
 
 Geist, a new font family by Vercel.
 
-Learn More
+## Learn More
 To learn more about Next.js, check out the following resources:
 
 Next.js Documentation – learn about Next.js features and API.
@@ -32,7 +32,7 @@ Learn Next.js – an interactive Next.js tutorial.
 
 Next.js GitHub Repository – your feedback and contributions are welcome!
 
-Deploy on Vercel
+## Deploy on Vercel
 The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
 
 Check out the deployment documentation for more details.
