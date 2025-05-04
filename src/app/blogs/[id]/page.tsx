@@ -8,6 +8,7 @@ const Page = async ({
     params: { id: string }
 }) => {
 
+    // Retrieving a single post
     const post = await prisma.post.findFirst({
         where: {
             id: params.id

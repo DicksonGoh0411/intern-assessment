@@ -12,6 +12,8 @@ const Navbar = async () => {
                 <li>
                     <Link href="/blogs">View Blogs</Link>
                 </li>
+
+                {/* If the user is logged in, show the logout button */}
                 {user?.name ? (
                     <Logout />
                 ) : (

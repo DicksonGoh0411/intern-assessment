@@ -9,6 +9,8 @@ const page = async () => {
         <>
             <div>
                 <h1 className='text-3xl font-bold mb-10'>Blogs page</h1>
+
+                {/* Only show create post button if the user is logged in */}
                 {user?.name ? (
                     <div className="flex">
                         <Link href="/createPost" className="bg-black border-2 border-white text-white px-4 py-2 rounded-md hover:bg-gray-500 transition-all duration-200 hover:-translate-y-1">Create Post</Link>
