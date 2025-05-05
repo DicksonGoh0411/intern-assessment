@@ -2,6 +2,8 @@ import { prisma } from "@/app/lib/db";
 import { getCurrentUser } from "@/app/lib/session";
 import { NextResponse } from "next/server";
 
+
+// Create a new post
 export async function POST(req: Request) {
     const user = await getCurrentUser();
     try {

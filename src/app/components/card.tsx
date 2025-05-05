@@ -2,6 +2,8 @@ import Link from "next/link"
 import { prisma } from '@/app/lib/db'
 
 const Card = async () => {
+
+    // Retrieving all posts from the database
     const posts = await prisma.post.findMany({
         orderBy: {
             createdAt: "desc"
